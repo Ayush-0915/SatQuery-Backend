@@ -4,7 +4,6 @@
 # ============================================================
 
 from pathlib import Path
-import sys
 import shutil
 import tempfile
 
@@ -20,33 +19,10 @@ from fastapi.middleware.cors import CORSMiddleware
 
 
 # ============================================================
-# PROJECT PATHS
-# ============================================================
-
-PROJECT_ROOT = Path(
-    r"C:\Users\SAGESTUDENT1\Desktop\Data"
-)
-
-VQA_SRC = (
-    PROJECT_ROOT
-    / "satquery_stage3_vqa"
-    / "src"
-)
-
-
-# ============================================================
-# IMPORT PATH
-# ============================================================
-
-if str(VQA_SRC) not in sys.path:
-    sys.path.insert(0, str(VQA_SRC))
-
-
-# ============================================================
 # MODEL SERVICE
 # ============================================================
 
-from vqa_service import vqa_service
+from services.vqa_service import vqa_service
 
 
 # ============================================================
